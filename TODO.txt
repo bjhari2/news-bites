@@ -1,0 +1,3 @@
+This file containes the list of features planned to implement:
+
+Add search functionality in the navbar
