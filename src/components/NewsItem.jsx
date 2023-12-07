@@ -10,7 +10,7 @@ export default function NewsItem(props) {
         size="4"
         my="4"
         style={{
-          backgroundColor: "var(--gray-a2)",
+          backgroundColor: "var(--gray-a3)",
           borderRadius: "var(--radius-4)",
         }}
       >
@@ -30,10 +30,10 @@ export default function NewsItem(props) {
             />
           </Box>
           <Flex direction="column" p="4">
-            <Heading as="h2" size="5">
+            <Heading as="h3" size="5">
               {title}
             </Heading>
-            <Text as="p" size="3" my="2">
+            <Text className="d-none d-md-block" as="p" size="2" my="2">
               {description}
             </Text>
             <Text className="text-muted" as="p" size="1" mb="2">

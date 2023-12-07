@@ -8,7 +8,7 @@
    position: absolute;
    width: 100%;
    height: 100%;
-   background: #474bff;
+   background: var(--accent-a10);
    border-radius: 50%;
    animation: spinner-vse6n7 1.25s infinite ease;
 }

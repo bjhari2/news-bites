@@ -1,0 +1,23 @@
+.news-houses>a>.circle>img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-a9);
+}
+
+.news-houses {
+    text-align: center;
+    width: auto;
+    margin: 0 15px;
+}
+
+.circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.news-houses-wrapper {
+    background-color: var(--gray-a3);
+    border-radius: var(--radius-4);
+}

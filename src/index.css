@@ -1,0 +1,29 @@
+body {
+    text-align: justify;
+    background: rgb(0,54,65);
+    background: radial-gradient(circle, rgb(0, 41, 50) 0%, rgba(4,4,70,0.5) 60%, rgba(2,0,36,1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Inter';
+}
+
+.skeleton-news-houses {
+    overflow: hidden;
+}
+
+nav {
+    background: var(--accent-a3);
+}
+
+.navbar-brand, .navbar-brand:hover {
+    color: white;
+    margin-left: 20px;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.name-color {
+    color: var(--accent-a10);
+}

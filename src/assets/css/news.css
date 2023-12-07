@@ -13,6 +13,11 @@ h1 {
     text-align: center;
 }
 
+a, a:hover, a:visited, a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
 #go-to-top {
     position: fixed;
     top: 90%;
@@ -20,7 +25,72 @@ h1 {
     padding: 15px;
 }
 
-a, a:hover, a:visited, a:active {
-    color: inherit;
-    text-decoration: none;
-   }
+@media (min-width: 1200px) and (max-width: 1400px) {
+    #go-to-top {
+        position: fixed;
+        top: 93%;
+        left: 87%;
+        padding: 15px;
+    }
+    
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    #go-to-top {
+        position: fixed;
+        top: 93%;
+        left: 85%;
+        padding: 15px;
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    #go-to-top {
+        position: fixed;
+        top: 93%;
+        left: 83%;
+        padding: 15px;
+    }
+    
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    #go-to-top {
+        position: fixed;
+        top: 93%;
+        left: 76%;
+        padding: 15px;
+    }
+    
+}
+
+@media (min-width: 450px) and (max-width: 576px) {
+    #go-to-top {
+        position: fixed;
+        top: 92%;
+        left: 71%;
+        padding: 15px;
+    }
+    
+}
+
+@media (min-width: 400px) and (max-width: 450px) {
+    #go-to-top {
+        position: fixed;
+        top: 92%;
+        left: 66%;
+        padding: 15px;
+    }
+    
+}
+
+@media (min-width: 300px) and (max-width: 400px) {
+    #go-to-top {
+        position: fixed;
+        top: 92%;
+        left: 66%;
+        padding: 15px;
+    }
+    
+}

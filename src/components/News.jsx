@@ -5,6 +5,9 @@ import Spinner from "./Spinner";
 import "../assets/css/news.css";
 import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
+import NewsHouses from "./NewsHouses";
+import TopNews from "./TopNews";
+import Preloader from "./Preloader";
 
 export function News(props) {
   const [articles, setArticles] = useState([]);
@@ -17,10 +20,16 @@ export function News(props) {
   }, []);
 
   const updateNews = async () => {
-    let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=522810ad6a424cfba0ab5dc4a062f984&pageSize=${props.pageSize}&page=${page}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&pageSize=${props.pageSize}&page=${page}`;
     props.setProgress(10);
     setLoading(true);
-    let data = await fetch(url);
+    let data = await fetch("https://newsbites-backend.cyclic.app/home", {
+      method: "post",
+      body: url,
+      headers: {
+        Authorization: import.meta.env.VITE_NEWS_API,
+      },
+    });
     props.setProgress(50);
     let parsedData = await data.json();
     props.setProgress(80);
@@ -34,26 +43,28 @@ export function News(props) {
     setPage(page + 1);
     let url = `https://newsapi.org/v2/top-headlines?country=${
       props.country
-    }&category=${
-      props.category
-    }&apiKey=522810ad6a424cfba0ab5dc4a062f984&pageSize=${props.pageSize}&page=${
-      page + 1
-    }`;
-    let data = await fetch(url);
+    }&category=${props.category}&pageSize=${props.pageSize}&page=${page + 1}`;
+    let data = await fetch("/home", {
+      method: "post",
+      body: url,
+      headers: {
+        "X-Api-Key": import.meta.env.VITE_NEWS_API,
+      },
+    });
     let parsedData = await data.json();
     setArticles(articles.concat(parsedData.articles));
     setTotalResults(parsedData.totalResults);
   };
 
-  return (
+  return !loading ? (
     <div className="container my-3">
       <h1>
-        NewsBites - Top{" "}
-        {props.category.charAt(0).toUpperCase() + props.category.slice(1) + " "}
-        Headlines
+        News<span className="name-color">Bites</span> - Get your daily dose of
+        news here!
       </h1>
+      <NewsHouses />
+      <TopNews />
       <div className="news-container">
-        {loading && <Spinner />}
         <InfiniteScroll
           dataLength={articles.length}
           next={fetchMoreData}
@@ -80,6 +91,8 @@ export function News(props) {
         </Button>
       </div>
     </div>
+  ) : (
+    <Preloader />
   );
 }
 

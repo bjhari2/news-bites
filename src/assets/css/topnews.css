@@ -1,0 +1,9 @@
+.categories {
+    padding: 10px 20px;
+    border: 2px solid var(--accent-a5);
+    border-radius: var(--radius-6);
+}
+
+.active {
+    background-color: var(--accent-a5);
+}
