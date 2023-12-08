@@ -23,6 +23,7 @@ export function News(props) {
     let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&pageSize=${props.pageSize}&page=${page}`;
     props.setProgress(10);
     setLoading(true);
+    console.log(process.env.API_KEY);
     let data = await fetch("https://newsbites-backend.cyclic.app/home", {
       method: "post",
       body: url,
