@@ -44,11 +44,11 @@ export function News(props) {
     let url = `https://newsapi.org/v2/top-headlines?country=${
       props.country
     }&category=${props.category}&pageSize=${props.pageSize}&page=${page + 1}`;
-    let data = await fetch("/home", {
+    let data = await fetch("https://newsbites-backend.cyclic.app/home", {
       method: "post",
       body: url,
       headers: {
-        "X-Api-Key": import.meta.env.VITE_NEWS_API,
+        Authorization: import.meta.env.VITE_NEWS_API,
       },
     });
     let parsedData = await data.json();
