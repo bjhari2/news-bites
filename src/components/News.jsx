@@ -48,7 +48,7 @@ export function News(props) {
       method: "post",
       body: url,
       headers: {
-        Authorization: import.meta.env.VITE_NEWS_API,
+        Authorization: bimport.meta.env.VITE_NEWS_API,
       },
     });
     let parsedData = await data.json();
