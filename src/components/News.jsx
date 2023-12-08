@@ -23,12 +23,12 @@ export function News(props) {
     let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&pageSize=${props.pageSize}&page=${page}`;
     props.setProgress(10);
     setLoading(true);
-    console.log(process.env.API_KEY);
+    console.log(import.meta.env.VITE_NEWS_API);
     let data = await fetch("https://newsbites-backend.cyclic.app/home", {
       method: "post",
       body: url,
       headers: {
-        Authorization: process.env.API_KEY,
+        Authorization: import.meta.env.VITE_NEWS_API,
       },
     });
     props.setProgress(50);
@@ -45,12 +45,11 @@ export function News(props) {
     let url = `https://newsapi.org/v2/top-headlines?country=${
       props.country
     }&category=${props.category}&pageSize=${props.pageSize}&page=${page + 1}`;
-    console.log(process.env.API_KEY);
     let data = await fetch("/home", {
       method: "post",
       body: url,
       headers: {
-        "X-Api-Key": process.env.API_KEY,
+        "X-Api-Key": import.meta.env.VITE_NEWS_API,
       },
     });
     let parsedData = await data.json();
