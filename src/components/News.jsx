@@ -27,7 +27,7 @@ export function News(props) {
       method: "post",
       body: url,
       headers: {
-        Authorization: import.meta.env.VITE_NEWS_API,
+        Authorization: process.env.API_KEY,
       },
     });
     props.setProgress(50);
@@ -48,7 +48,7 @@ export function News(props) {
       method: "post",
       body: url,
       headers: {
-        "X-Api-Key": import.meta.env.VITE_NEWS_API,
+        "X-Api-Key": process.env.API_KEY,
       },
     });
     let parsedData = await data.json();
