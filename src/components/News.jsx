@@ -44,6 +44,7 @@ export function News(props) {
     let url = `https://newsapi.org/v2/top-headlines?country=${
       props.country
     }&category=${props.category}&pageSize=${props.pageSize}&page=${page + 1}`;
+    console.log(process.env.API_KEY);
     let data = await fetch("/home", {
       method: "post",
       body: url,
