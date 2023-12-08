@@ -27,7 +27,7 @@ export function News(props) {
       method: "post",
       body: url,
       headers: {
-        Authorization: ibmport.meta.env.VITE_NEWS_API,
+        Authorization: process.env.NEWS_API,
       },
     });
     props.setProgress(50);
