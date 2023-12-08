@@ -8,6 +8,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import NewsHouses from "./NewsHouses";
 import TopNews from "./TopNews";
 import Preloader from "./Preloader";
+import Footer from "./Footer";
 
 export function News(props) {
   const [articles, setArticles] = useState([]);
@@ -51,40 +52,45 @@ export function News(props) {
   };
 
   return !loading ? (
-    <div className="container my-3">
-      <h1>
-        News<span className="name-color">Bites</span> - Get your daily dose of
-        news here!
-      </h1>
-      <NewsHouses />
-      <TopNews />
-      <div className="news-container">
-        <InfiniteScroll
-          dataLength={articles.length}
-          next={fetchMoreData}
-          hasMore={articles.length !== totalResults}
-          loader={<Spinner />}
-        >
-          {articles.map((elements) => {
-            return (
-              <div key={elements.url}>
-                <NewsItem
-                  title={elements.title}
-                  description={elements.description}
-                  urlToImage={elements.urlToImage}
-                  url={elements.url}
-                  author={elements.author}
-                  date={elements.publishedAt}
-                />
-              </div>
-            );
-          })}
-        </InfiniteScroll>
-        <Button radius="full" id="go-to-top">
-          <a href="#top">Back to top &uarr;</a>
-        </Button>
-      </div>
-    </div>
+    <>
+      <main>
+        <div className="container my-3">
+          <h1>
+            News<span className="name-color">Bites</span> - Get your daily dose
+            of news here!
+          </h1>
+          <NewsHouses />
+          <TopNews />
+          <div className="news-container">
+            <InfiniteScroll
+              dataLength={articles.length}
+              next={fetchMoreData}
+              hasMore={articles.length !== totalResults}
+              loader={<Spinner />}
+            >
+              {articles.map((elements) => {
+                return (
+                  <div key={elements.url}>
+                    <NewsItem
+                      title={elements.title}
+                      description={elements.description}
+                      urlToImage={elements.urlToImage}
+                      url={elements.url}
+                      author={elements.author}
+                      date={elements.publishedAt}
+                    />
+                  </div>
+                );
+              })}
+            </InfiniteScroll>
+            <Button radius="full" id="go-to-top">
+              <a href="#top">Back to top &uarr;</a>
+            </Button>
+            <Footer />
+          </div>
+        </div>
+      </main>
+    </>
   ) : (
     <Preloader />
   );
