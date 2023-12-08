@@ -27,7 +27,7 @@ export function News(props) {
       method: "post",
       body: url,
       headers: {
-        Authorization: process.env.NEWS_API,
+        Authorization: import.meta.env.VITE_NEWS_API,
       },
     });
     props.setProgress(50);
