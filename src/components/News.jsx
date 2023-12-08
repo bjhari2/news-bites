@@ -26,9 +26,6 @@ export function News(props) {
     let data = await fetch("https://newsbites-backend.cyclic.app/home", {
       method: "post",
       body: url,
-      headers: {
-        Authorization: import.meta.env.VITE_NEWS_API,
-      },
     });
     props.setProgress(50);
     let parsedData = await data.json();
@@ -47,9 +44,6 @@ export function News(props) {
     let data = await fetch("https://newsbites-backend.cyclic.app/home", {
       method: "post",
       body: url,
-      headers: {
-        Authorization: import.meta.env.VITE_NEWS_API,
-      },
     });
     let parsedData = await data.json();
     setArticles(articles.concat(parsedData.articles));
