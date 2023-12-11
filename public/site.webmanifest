@@ -1,6 +1,7 @@
 {
     "name": "NewsBites",
     "short_name": "",
+	"description": "Get your daily dose of news here!",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -11,9 +12,24 @@
             "src": "/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
+        },
+        {
+            "src": "/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png",
+			"purpose": "apple touch icon"
+        },
+        {
+            "src": "/maskable-icon.png",
+            "sizes": "512x512",
+            "type": "image/png",
+			"purpose": "any maskable"
         }
     ],
     "theme_color": "#323232",
     "background_color": "#323232",
-    "display": "standalone"
+    "display": "standalone",
+	"start_url": "/",
+	"scope": "/",
+	"orientation": "portrait"
 }
