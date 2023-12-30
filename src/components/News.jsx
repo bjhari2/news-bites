@@ -51,6 +51,25 @@ export function News(props) {
     setTotalResults(parsedData.totalResults);
   };
 
+  const inFeedAd = (
+    <>
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4551066487815704"
+        crossOrigin="anonymous"
+      ></script>
+      <ins
+        className="adsbygoogle"
+        style={{ display: "block" }}
+        data-ad-format="fluid"
+        data-ad-layout-key="-67+bm-71-8p+1p5"
+        data-ad-client="ca-pub-4551066487815704"
+        data-ad-slot="8024889706"
+      />
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </>
+  );
+
   return !loading ? (
     <>
       <main>
@@ -68,9 +87,10 @@ export function News(props) {
               hasMore={articles.length !== totalResults}
               loader={<Spinner />}
             >
-              {articles.map((elements) => {
+              {articles.map((elements, index) => {
                 return (
                   <div key={elements.url}>
+                    {index == 2 ? inFeedAd : ""}
                     <NewsItem
                       title={elements.title}
                       description={elements.description}
