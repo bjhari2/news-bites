@@ -22,7 +22,7 @@ export default function Footer() {
         </Text>
         <Flex gap="6" justify="center" px="2" my="2">
           <Box>
-            <Link href="https://www.linkedin.com/in/hari-bj-88204a246/">
+            <Link to="https://www.linkedin.com/in/hari-bj-88204a246/">
               <svg
                 width="15"
                 height="15"
@@ -41,7 +41,7 @@ export default function Footer() {
             </Link>
           </Box>
           <Box>
-            <Link href="https://github.com/bjhari2">
+            <Link to="https://github.com/bjhari2">
               <svg
                 width="15"
                 height="15"
@@ -60,7 +60,7 @@ export default function Footer() {
             </Link>
           </Box>
           <Box>
-            <Link href="https://instagram.com/hari_bj02">
+            <Link to="https://instagram.com/hari_bj02">
               <svg
                 width="15"
                 height="15"
@@ -79,7 +79,7 @@ export default function Footer() {
             </Link>
           </Box>
           <Box>
-            <Link href="mailto:bjhari2@gmail.com">
+            <Link to="mailto:bjhari2@gmail.com">
               <svg
                 width="15"
                 height="15"
