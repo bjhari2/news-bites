@@ -24,7 +24,7 @@ export function News(props) {
     let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&pageSize=${props.pageSize}&page=${page}`;
     props.setProgress(10);
     setLoading(true);
-    let data = await fetch("https://newsbites-backend.cyclic.app/home", {
+    let data = await fetch("https://newsbites-backend-dz7z.onrender.com/home", {
       method: "post",
       body: url,
     });
@@ -42,7 +42,7 @@ export function News(props) {
     let url = `https://newsapi.org/v2/top-headlines?country=${
       props.country
     }&category=${props.category}&pageSize=${props.pageSize}&page=${page + 1}`;
-    let data = await fetch("https://newsbites-backend.cyclic.app/home", {
+    let data = await fetch("https://newsbites-backend-dz7z.onrender.com/home", {
       method: "post",
       body: url,
     });
