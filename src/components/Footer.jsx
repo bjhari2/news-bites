@@ -99,7 +99,7 @@ export default function Footer() {
           </Box>
         </Flex>
         <Text as="p" align="center" style={{ color: "var(--accent-a10)" }}>
-          @Copyright 2023. All Rights Reserved.
+          &copy; Copyright 2023. All Rights Reserved.
         </Text>
       </Container>
     </Box>
